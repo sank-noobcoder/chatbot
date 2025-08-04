@@ -1,0 +1,10 @@
+intent,question,answer
+greeting,hello,Hi there! How can I assist you today?
+greeting,hi,Hello! What can I do for you?
+greeting,hey,Hey! How may I help you?
+farewell,bye,Goodbye! Have a great day!
+farewell,see you later,See you later! Take care.
+farewell,goodbye,Bye! Hope to see you again.
+thanks,thank you,You're welcome! I'm happy to help.
+thanks,thanks,Glad to be of assistance!
+

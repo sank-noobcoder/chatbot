@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .chat-container {
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .chat-window {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .send-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-window" id="chat-window"></div>
+    <input type="text" id="user-input" class="chat-input" placeholder="Type your message here...">
+    <button class="send-button" onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+    function sendMessage() {
+        const userInput = document.getElementById('user-input').value;
+        const chatWindow = document.getElementById('chat-window');
+
+        chatWindow.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+        document.getElementById('user-input').value = '';
+
+        fetch('/get_response', {
+            method: 'POST',
+            body: new URLSearchParams({ 'user_input': userInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            chatWindow.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        });
+    }
+</script>
+
+</body>
+</html>
