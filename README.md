@@ -17,14 +17,14 @@ This project is a simple AI-powered chatbot built with **Python**, **Flask**, an
 
 ## 📁 Project Structure
 
-├── app.py # Flask backend application
-├── chatbot.py # Chatbot logic (reads and responds from CSV)
-├── data/
-│ └── knowledge.csv # CSV file with questions and answers
-├── templates/
-│ └── index.html # Frontend interface
-├── static/
-│ └── style.css # (Optional) Styling for frontend
+- ├── app.py # Flask backend application
+- ├── chatbot.py # Chatbot logic (reads and responds from CSV)
+- ├── data/
+- │ └── knowledge.csv # CSV file with questions and answers
+- ├── templates/
+- │ └── index.html # Frontend interface
+- ├── static/
+- │ └── style.css # (Optional) Styling for frontend
 
 ---
 
@@ -32,8 +32,8 @@ This project is a simple AI-powered chatbot built with **Python**, **Flask**, an
 
 Make sure your `knowledge.csv` inside the `data/` folder looks like this:
 
-csv
-question,answer
-"Hello", "Hi there! How can I help you?"
-"What's your name?", "I am your AI assistant."
-"How are you?", "I'm doing well, thank you!"
+- csv
+- question,answer
+- "Hello", "Hi there! How can I help you?"
+- "What's your name?", "I am your AI assistant."
+- "How are you?", "I'm doing well, thank you!"
